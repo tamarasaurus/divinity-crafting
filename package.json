@@ -26,6 +26,12 @@
     "gulp": "^3.8.7"
   },
   "devDependencies": {
-    "gulp-browserify": "^0.5.0"
+    "browserify": "^5.10.0",
+    "browserify-jade": "^0.1.1",
+    "gulp": "^3.8.7",
+    "gulp-browserify": "^0.5.0",
+    "gulp-jade": "^0.7.0",
+    "jade": "^1.5.0",
+    "vinyl-source-stream": "^0.1.1"
   }
 }
