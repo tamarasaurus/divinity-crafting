@@ -1,0 +1,31 @@
+{
+  "name": "divinity-crafting",
+  "version": "0.0.1",
+  "description": "A dataset and app to view crafting combinations for Divinity Original Sin",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamarasaurus/divinity-crafting.git"
+  },
+  "keywords": [
+    "divinity",
+    "original",
+    "sin",
+    "crafting"
+  ],
+  "author": "Tamara Chahine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamarasaurus/divinity-crafting/issues"
+  },
+  "homepage": "https://github.com/tamarasaurus/divinity-crafting",
+  "dependencies": {
+    "gulp": "^3.8.7"
+  },
+  "devDependencies": {
+    "gulp-browserify": "^0.5.0"
+  }
+}
