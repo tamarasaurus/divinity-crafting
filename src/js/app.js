@@ -1,6 +1,8 @@
-var $ = require('jquery');
-var Backbone = require('backbone');
-Backbone.$ = $;
 var data = require('./data');
+var Item = require('./models/item');
 
-console.log(Backbone, data);
+var item = new Item({
+  title: 'Check attributes property of the logged models in the console.'
+});
+
+console.log(item, data);

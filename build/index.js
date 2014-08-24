@@ -1,11 +1,13 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var $ = require('jquery');
-var Backbone = require('backbone');
-Backbone.$ = $;
 var data = require('./data');
+var Item = require('./models/item');
 
-console.log(Backbone, data);
-},{"./data":5,"backbone":2,"jquery":4}],2:[function(require,module,exports){
+var item = new Item({
+  title: 'Check attributes property of the logged models in the console.'
+});
+
+console.log(item, data);
+},{"./data":5,"./models/item":6}],2:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -16665,4 +16667,16 @@ module.exports=[
         "notes": "Leveled to player"
     }
 ]
-},{}]},{},[1]);
+},{}],6:[function(require,module,exports){
+var $ = require('jquery');
+var Backbone = require('backbone');
+Backbone.$ = $;
+
+module.exports = Backbone.Model.extend({
+    defaults: {
+      title: '',
+      completed: false
+    }
+});
+
+},{"backbone":2,"jquery":4}]},{},[1]);
