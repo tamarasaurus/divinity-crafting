@@ -1,0 +1,8 @@
+h1= title
+ul
+    each item in items
+        li
+            strong= item.get('input_1')
+            span +
+            strong= item.get('input_2')
+            span= '='+item.get('output')

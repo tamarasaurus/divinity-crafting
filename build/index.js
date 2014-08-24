@@ -4,10 +4,11 @@ Backbone.$ = jQuery;
 var data = require('./data');
 
 var Combinations = require('./collections/combinations');
+var List = require('./views/combinations');
+
 var combinations = new Combinations(data);
-
-
-},{"./collections/combinations":4,"./data":5,"backbone":2}],2:[function(require,module,exports){
+var list = new List({collection: combinations, el: $('.main')});
+},{"./collections/combinations":6,"./data":7,"./views/combinations":10,"backbone":2}],2:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -2963,6 +2964,213 @@ var combinations = new Combinations(data);
 }).call(this);
 
 },{}],4:[function(require,module,exports){
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+/**
+ * Merge two attribute objects giving precedence
+ * to values in object `b`. Classes are special-cased
+ * allowing for arrays and merging/joining appropriately
+ * resulting in a string.
+ *
+ * @param {Object} a
+ * @param {Object} b
+ * @return {Object} a
+ * @api private
+ */
+
+exports.merge = function merge(a, b) {
+  if (arguments.length === 1) {
+    var attrs = a[0];
+    for (var i = 1; i < a.length; i++) {
+      attrs = merge(attrs, a[i]);
+    }
+    return attrs;
+  }
+  var ac = a['class'];
+  var bc = b['class'];
+
+  if (ac || bc) {
+    ac = ac || [];
+    bc = bc || [];
+    if (!Array.isArray(ac)) ac = [ac];
+    if (!Array.isArray(bc)) bc = [bc];
+    a['class'] = ac.concat(bc).filter(nulls);
+  }
+
+  for (var key in b) {
+    if (key != 'class') {
+      a[key] = b[key];
+    }
+  }
+
+  return a;
+};
+
+/**
+ * Filter null `val`s.
+ *
+ * @param {*} val
+ * @return {Boolean}
+ * @api private
+ */
+
+function nulls(val) {
+  return val != null && val !== '';
+}
+
+/**
+ * join array as classes.
+ *
+ * @param {*} val
+ * @return {String}
+ */
+exports.joinClasses = joinClasses;
+function joinClasses(val) {
+  return Array.isArray(val) ? val.map(joinClasses).filter(nulls).join(' ') : val;
+}
+
+/**
+ * Render the given classes.
+ *
+ * @param {Array} classes
+ * @param {Array.<Boolean>} escaped
+ * @return {String}
+ */
+exports.cls = function cls(classes, escaped) {
+  var buf = [];
+  for (var i = 0; i < classes.length; i++) {
+    if (escaped && escaped[i]) {
+      buf.push(exports.escape(joinClasses([classes[i]])));
+    } else {
+      buf.push(joinClasses(classes[i]));
+    }
+  }
+  var text = joinClasses(buf);
+  if (text.length) {
+    return ' class="' + text + '"';
+  } else {
+    return '';
+  }
+};
+
+/**
+ * Render the given attribute.
+ *
+ * @param {String} key
+ * @param {String} val
+ * @param {Boolean} escaped
+ * @param {Boolean} terse
+ * @return {String}
+ */
+exports.attr = function attr(key, val, escaped, terse) {
+  if ('boolean' == typeof val || null == val) {
+    if (val) {
+      return ' ' + (terse ? key : key + '="' + key + '"');
+    } else {
+      return '';
+    }
+  } else if (0 == key.indexOf('data') && 'string' != typeof val) {
+    return ' ' + key + "='" + JSON.stringify(val).replace(/'/g, '&apos;') + "'";
+  } else if (escaped) {
+    return ' ' + key + '="' + exports.escape(val) + '"';
+  } else {
+    return ' ' + key + '="' + val + '"';
+  }
+};
+
+/**
+ * Render the given attributes object.
+ *
+ * @param {Object} obj
+ * @param {Object} escaped
+ * @return {String}
+ */
+exports.attrs = function attrs(obj, terse){
+  var buf = [];
+
+  var keys = Object.keys(obj);
+
+  if (keys.length) {
+    for (var i = 0; i < keys.length; ++i) {
+      var key = keys[i]
+        , val = obj[key];
+
+      if ('class' == key) {
+        if (val = joinClasses(val)) {
+          buf.push(' ' + key + '="' + val + '"');
+        }
+      } else {
+        buf.push(exports.attr(key, val, false, terse));
+      }
+    }
+  }
+
+  return buf.join('');
+};
+
+/**
+ * Escape the given string of `html`.
+ *
+ * @param {String} html
+ * @return {String}
+ * @api private
+ */
+
+exports.escape = function escape(html){
+  var result = String(html)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+  if (result === '' + html) return html;
+  else return result;
+};
+
+/**
+ * Re-throw the given `err` in context to the
+ * the jade in `filename` at the given `lineno`.
+ *
+ * @param {Error} err
+ * @param {String} filename
+ * @param {String} lineno
+ * @api private
+ */
+
+exports.rethrow = function rethrow(err, filename, lineno, str){
+  if (!(err instanceof Error)) throw err;
+  if ((typeof window != 'undefined' || !filename) && !str) {
+    err.message += ' on line ' + lineno;
+    throw err;
+  }
+  try {
+    str = str || require('fs').readFileSync(filename, 'utf8')
+  } catch (ex) {
+    rethrow(err, null, lineno)
+  }
+  var context = 3
+    , lines = str.split('\n')
+    , start = Math.max(lineno - context, 0)
+    , end = Math.min(lines.length, lineno + context);
+
+  // Error context
+  var context = lines.slice(start, end).map(function(line, i){
+    var curr = i + start + 1;
+    return (curr == lineno ? '  > ' : '    ')
+      + curr
+      + '| '
+      + line;
+  }).join('\n');
+
+  // Alter exception message
+  err.path = filename;
+  err.message = (filename || 'Jade') + ':' + lineno
+    + '\n' + context + '\n\n' + err.message;
+  throw err;
+};
+
+},{"fs":4}],6:[function(require,module,exports){
 var Collection = require('backbone').Collection;
 var Combination = require('../models/combination');
 
@@ -2970,7 +3178,7 @@ var Combination = require('../models/combination');
 module.exports = Collection.extend({
 	model: Combination
 });
-},{"../models/combination":6,"backbone":2}],5:[function(require,module,exports){
+},{"../models/combination":8,"backbone":2}],7:[function(require,module,exports){
 module.exports=[
     {
         "output_category": "Armor",
@@ -7483,7 +7691,7 @@ module.exports=[
         "notes": "Leveled to player"
     }
 ]
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var Model = require('backbone').Model;
 
 module.exports = Model.extend({
@@ -7498,4 +7706,145 @@ module.exports = Model.extend({
 		skill_level: null
 	}
 });
-},{"backbone":2}]},{},[1]);
+},{"backbone":2}],9:[function(require,module,exports){
+var jade = require('jade/lib/runtime.js');
+module.exports=function(params) { if (params) {params.require = require;} return (
+function template(locals) {
+var jade_debug = [{ lineno: 1, filename: "/Users/chahinet2r/Sites/divinity-crafting/src/js/templates/combinations.jade" }];
+try {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+;var locals_for_with = (locals || {});(function (title, undefined, items) {
+
+
+buf.push("<h1>" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)));
+
+
+buf.push("</h1>");
+
+
+buf.push("<ul>");
+
+
+// iterate items
+;(function(){
+  var $$obj = items;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var item = $$obj[$index];
+
+
+
+buf.push("<li>");
+
+
+buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+
+
+buf.push("</strong>");
+
+
+buf.push("<span>");
+
+
+buf.push("+");
+
+
+buf.push("</span>");
+
+
+buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+
+
+buf.push("</strong>");
+
+
+buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')) ? "" : jade_interp)));
+
+
+buf.push("</span>");
+
+
+buf.push("</li>");
+
+
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var item = $$obj[$index];
+
+
+
+buf.push("<li>");
+
+
+buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+
+
+buf.push("</strong>");
+
+
+buf.push("<span>");
+
+
+buf.push("+");
+
+
+buf.push("</span>");
+
+
+buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+
+
+buf.push("</strong>");
+
+
+buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')) ? "" : jade_interp)));
+
+
+buf.push("</span>");
+
+
+buf.push("</li>");
+
+
+    }
+
+  }
+}).call(this);
+
+
+
+buf.push("</ul>");
+
+}.call(this,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined));;return buf.join("");
+} catch (err) {
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "h1= title\nul\n    each item in items\n        li\n            strong= item.get('input_1')\n            span +\n            strong= item.get('input_2')\n            span= '='+item.get('output')\n");
+}
+}
+)(params); }
+
+},{"jade/lib/runtime.js":5}],10:[function(require,module,exports){
+var View = require('backbone').View;
+var template = require('../templates/combinations.jade');
+
+module.exports = View.extend({
+	tagName: 'ul',
+	className: 'item-combo-list',
+
+	initialize: function() {
+		this.render();
+	},
+
+	render: function() {
+		console.log(this.$el.html(template({
+			items: this.collection.models,
+			title: 'Combinations'
+		})));
+	}
+});
+},{"../templates/combinations.jade":9,"backbone":2}]},{},[1]);
