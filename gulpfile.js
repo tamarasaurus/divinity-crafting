@@ -40,39 +40,11 @@ var compile_scripts = function() {
 };
 
 
-var serve = function() {
-	// var root = './build';
-	// var app = connect();
-
-	// // createStatic( { dir: "dist" }, function(err, middleware) {
-	// //   app.use('/', middleware);
-	// // });
-
-	// app.use(require('connect-livereload')({
-	// 	port: 4002
-	// }));
-
-	// app.use(serveStatic(root));
-
-	// var server = http.createServer(app);
-	// var port = 8888;
-
-	// server.listen(port, function(err) {
-	// 	if (err) {
-	// 		return handleError(err);
-	// 	}
-	// 	gutil.log('Serving app on port: ' + port);
-	// });
-};
-
 gulp.task('build', function() {
 	compile_scripts();
 	compile_jade();
 });
 
-// gulp.task('serve', function() {
-// 	serve();
-// });
 
 gulp.task('connect', function() {
   connect.server({
