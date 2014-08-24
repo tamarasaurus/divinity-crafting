@@ -10,9 +10,9 @@ module.exports = View.extend({
 	},
 
 	render: function() {
-		console.log(this.$el.html(template({
+		this.$el.html(template({
 			items: this.collection.models,
 			title: 'Combinations'
-		})));
+		}));
 	}
 });

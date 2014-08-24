@@ -7701,7 +7701,6 @@ module.exports = Model.extend({
 		notes: null,
 		output: '',
 		output_category: '',
-		title: '',
 		skill: null,
 		skill_level: null
 	}
@@ -7740,6 +7739,18 @@ buf.push("<ul>");
 buf.push("<li>");
 
 
+buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill')) ? "" : jade_interp)));
+
+
+buf.push("</i>");
+
+
+buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill_level')) ? "" : jade_interp)));
+
+
+buf.push("</i>");
+
+
 buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
 
 
@@ -7761,10 +7772,19 @@ buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_2')) ?
 buf.push("</strong>");
 
 
-buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')) ? "" : jade_interp)));
+buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')+'('+item.get('output_category')+')') ? "" : jade_interp)));
 
 
 buf.push("</span>");
+
+
+buf.push("<hr/>");
+
+
+buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('notes')) ? "" : jade_interp)));
+
+
+buf.push("</p>");
 
 
 buf.push("</li>");
@@ -7782,6 +7802,18 @@ buf.push("</li>");
 buf.push("<li>");
 
 
+buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill')) ? "" : jade_interp)));
+
+
+buf.push("</i>");
+
+
+buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill_level')) ? "" : jade_interp)));
+
+
+buf.push("</i>");
+
+
 buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
 
 
@@ -7803,10 +7835,19 @@ buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_2')) ?
 buf.push("</strong>");
 
 
-buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')) ? "" : jade_interp)));
+buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')+'('+item.get('output_category')+')') ? "" : jade_interp)));
 
 
 buf.push("</span>");
+
+
+buf.push("<hr/>");
+
+
+buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('notes')) ? "" : jade_interp)));
+
+
+buf.push("</p>");
 
 
 buf.push("</li>");
@@ -7823,7 +7864,7 @@ buf.push("</ul>");
 
 }.call(this,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "h1= title\nul\n    each item in items\n        li\n            strong= item.get('input_1')\n            span +\n            strong= item.get('input_2')\n            span= '='+item.get('output')\n");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "h1= title\nul\n    each item in items\n        li\n            i= item.get('skill')\n            i= item.get('skill_level')\n            strong= item.get('input_1')\n            span +\n            strong= item.get('input_2')\n            span= '='+item.get('output')+'('+item.get('output_category')+')'\n            hr\n            p= item.get('notes')\n");
 }
 }
 )(params); }
@@ -7841,10 +7882,10 @@ module.exports = View.extend({
 	},
 
 	render: function() {
-		console.log(this.$el.html(template({
+		this.$el.html(template({
 			items: this.collection.models,
 			title: 'Combinations'
-		})));
+		}));
 	}
 });
 },{"../templates/combinations.jade":9,"backbone":2}]},{},[1]);

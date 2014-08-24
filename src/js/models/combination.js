@@ -7,7 +7,6 @@ module.exports = Model.extend({
 		notes: null,
 		output: '',
 		output_category: '',
-		title: '',
 		skill: null,
 		skill_level: null
 	}
