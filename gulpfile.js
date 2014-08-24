@@ -6,11 +6,6 @@ var jadeify = require('browserify-jade').jade({
 });
 var source = require('vinyl-source-stream');
 var connect = require('gulp-connect');
-// var gutil = require('gulp-util');
-// var connect = require('connect');
-// var http = require('http');
-// var serveStatic = require('serve-static');
-// var tinylr = require('tiny-lr')();
 
 var handleError = function(e) {
 	console.log(e);
