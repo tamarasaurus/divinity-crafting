@@ -16,13 +16,14 @@ var compile_jade = function() {
 	gulp.src('./src/index.jade')
 		.pipe(jade())
 		.pipe(gulp.dest('./build'))
-        .pipe(connect.reload());
+    .pipe(connect.reload());
 };
 
 var compile_stylus = function(){
-  gulp.src('./css/**/*.styl')
+  gulp.src('./src/styl/**/*.styl')
     .pipe(stylus())
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./build'))
+    .pipe(connect.reload());
 };
 
 var compile_scripts = function() {
@@ -45,9 +46,6 @@ var compile_scripts = function() {
 gulp.task('build', function() {
 	compile_scripts();
 	compile_jade();
-});
-
-gulp.task('stylus', function () {
   compile_stylus();
 });
 
