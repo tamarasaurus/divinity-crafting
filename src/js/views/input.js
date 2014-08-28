@@ -2,14 +2,26 @@ var View = require('backbone').View;
 var template = require('../templates/input.jade');
 
 module.exports = View.extend({
-  tagName: 'div',
-  className: 'input',
+	tagName: 'div',
+	className: 'input',
 
-  initialize: function() {
-    this.render();
-  },
+	events: {
+		'keyup input': 'change'
+	},
 
-  render: function() {
-    this.$el.html(template());
-  }
+	initialize: function() {
+		this.render();
+	},
+
+	render: function() {
+		this.$el.html(template());
+	},
+
+	change: function(e) {
+
+
+    console.log(this.collection);
+    console.log(e);
+	}
+
 });
