@@ -3,28 +3,18 @@
   h3.item-title= item.get('output')
   span.item-subtitle= item.get('output_category')
 
-  if item.get('skill')
-    span.item-subtitle= item.get('skill') + ' ' + item.get('skill_level')
-  endif
-
   if item.get('notes')
     h4.item-section-title Notes
     p= item.get('notes')
-  endif
 
   if item.get('bonus')
     h4.item-section-title Bonus
     p= item.get('bonus')
 
+  if item.get('skill')
+    h4.item-section-title.highlight= item.get('skill') + ' ' + item.get('skill_level')
+
 .item-inputs
   .item-input= item.get('input_1')
   .fa.fa-bolt
   .item-input= item.get('input_2')
-//- i= item.get('skill')
-//- i= item.get('skill_level')
-//- strong= item.get('input_1')
-//- span +
-//- strong= item.get('input_2')
-//- span= '='+item.get('output')+'('+item.get('output_category')+')'
-//- hr
-//- p= item.get('notes')

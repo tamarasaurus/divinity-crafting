@@ -7762,25 +7762,6 @@ buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = 
 buf.push("</span>");
 
 
-if ( item.get('skill'))
-{
-
-
-buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
-
-
-buf.push("</span>");
-
-
-}
-
-
-buf.push("<endif>");
-
-
-buf.push("</endif>");
-
-
 if ( item.get('notes'))
 {
 
@@ -7803,12 +7784,6 @@ buf.push("</p>");
 }
 
 
-buf.push("<endif>");
-
-
-buf.push("</endif>");
-
-
 if ( item.get('bonus'))
 {
 
@@ -7826,6 +7801,19 @@ buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('bonus')) ? "" : j
 
 
 buf.push("</p>");
+
+
+}
+
+
+if ( item.get('skill'))
+{
+
+
+buf.push("<h4 class=\"item-section-title highlight\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
+
+
+buf.push("</h4>");
 
 
 }
@@ -7856,22 +7844,6 @@ buf.push("</div>");
 
 
 buf.push("</div>");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -7912,25 +7884,6 @@ buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = 
 buf.push("</span>");
 
 
-if ( item.get('skill'))
-{
-
-
-buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
-
-
-buf.push("</span>");
-
-
-}
-
-
-buf.push("<endif>");
-
-
-buf.push("</endif>");
-
-
 if ( item.get('notes'))
 {
 
@@ -7953,12 +7906,6 @@ buf.push("</p>");
 }
 
 
-buf.push("<endif>");
-
-
-buf.push("</endif>");
-
-
 if ( item.get('bonus'))
 {
 
@@ -7976,6 +7923,19 @@ buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('bonus')) ? "" : j
 
 
 buf.push("</p>");
+
+
+}
+
+
+if ( item.get('skill'))
+{
+
+
+buf.push("<h4 class=\"item-section-title highlight\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
+
+
+buf.push("</h4>");
 
 
 }
@@ -8006,22 +7966,6 @@ buf.push("</div>");
 
 
 buf.push("</div>");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
