@@ -7737,7 +7737,14 @@ buf.push("<ul>");
 
 
 
-buf.push("<li>");
+buf.push("<li class=\"item\">");
+
+
+
+buf.push("<div class=\"arrow\">");
+
+
+buf.push("</div>");
 
 
 buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill')) ? "" : jade_interp)));
@@ -7786,6 +7793,7 @@ buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('notes')) ? "" : j
 
 
 buf.push("</p>");
+
 
 
 buf.push("</li>");
@@ -7800,7 +7808,14 @@ buf.push("</li>");
 
 
 
-buf.push("<li>");
+buf.push("<li class=\"item\">");
+
+
+
+buf.push("<div class=\"arrow\">");
+
+
+buf.push("</div>");
 
 
 buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill')) ? "" : jade_interp)));
@@ -7849,6 +7864,7 @@ buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('notes')) ? "" : j
 
 
 buf.push("</p>");
+
 
 
 buf.push("</li>");
@@ -7865,7 +7881,7 @@ buf.push("</ul>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "ul\n    each item in items\n        li\n            i= item.get('skill')\n            i= item.get('skill_level')\n            strong= item.get('input_1')\n            span +\n            strong= item.get('input_2')\n            span= '='+item.get('output')+'('+item.get('output_category')+')'\n            hr\n            p= item.get('notes')\n");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "ul\n    each item in items\n        li.item\n            include ./partials/card.jade");
 }
 }
 )(params); }
@@ -7886,6 +7902,12 @@ buf.push("<div class=\"menu\">");
 
 
 buf.push("<div class=\"burger\">");
+
+
+buf.push("<div class=\"fa fa-bars\">");
+
+
+buf.push("</div>");
 
 
 buf.push("</div>");
@@ -7930,6 +7952,12 @@ buf.push("</h2>");
 buf.push("<div class=\"find\">");
 
 
+buf.push("<div class=\"fa fa-search\">");
+
+
+buf.push("</div>");
+
+
 buf.push("</div>");
 
 
@@ -7937,7 +7965,7 @@ buf.push("</div>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Combinations\n  .find\n");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n    .fa.fa-bars\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Combinations\n  .find\n    .fa.fa-search\n");
 }
 }
 )(params); }
