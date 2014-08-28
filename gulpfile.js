@@ -47,6 +47,8 @@ gulp.task('build', function() {
 	compile_scripts();
 	compile_jade();
   compile_stylus();
+
+  connect.reload();
 });
 
 
@@ -54,7 +56,7 @@ gulp.task('connect', function() {
   connect.server({
     root: './build',
     livereload: true,
-    port: 8888
+    // port: 8888
   });
 });
 
