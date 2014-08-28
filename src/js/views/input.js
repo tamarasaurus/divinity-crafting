@@ -1,4 +1,5 @@
 var View = require('backbone').View;
+var _ = require('underscore');
 var template = require('../templates/input.jade');
 
 module.exports = View.extend({
@@ -6,7 +7,7 @@ module.exports = View.extend({
 	className: 'input',
 
 	events: {
-		'keyup input': 'change'
+		'input input': 'change'
 	},
 
 	initialize: function() {
@@ -18,10 +19,16 @@ module.exports = View.extend({
 	},
 
 	change: function(e) {
+		var val = $(e.currentTarget).val();
+		if (!_.isEmpty(val)) {
+			this.setFilter(this.collection, val);
+		} else {
+			this.collection.reset(this.collection.originalModels);
+		}
+	},
 
-
-    console.log(this.collection);
-    console.log(e);
-	}
+	setFilter: _.debounce(function(collection, val) {
+		collection.findByIngredient(val);
+	}, 500)
 
 });

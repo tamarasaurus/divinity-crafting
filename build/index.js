@@ -10,13 +10,17 @@ var data = require('./data');
 var Combinations = require('./collections/combinations');
 var combinations = new Combinations(data);
 
-console.log(combinations);
-
-var list = new List({el: $('.list'), collection: combinations});
-var header = new Header({el: $('.header')});
-var input = new Input({el: $('.search'), collection: combinations});
-
-  // this.collection.findByIngredient('starfish');
+var list = new List({
+	el: $('.list'),
+	collection: combinations
+});
+var header = new Header({
+	el: $('.header')
+});
+var input = new Input({
+	el: $('.search'),
+	collection: combinations
+});
 },{"./collections/combinations":7,"./data":8,"./views/combinations":13,"./views/header":14,"./views/input":15,"backbone":2}],2:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
@@ -4600,17 +4604,21 @@ exports.rethrow = function rethrow(err, filename, lineno, str){
 var Collection = require('backbone').Collection;
 var Combination = require('../models/combination');
 
-module.exports = Collection.extend({
+var CombinationCollection = Collection.extend({
 	model: Combination,
+	initialize: function(data) {
+		this.originalModels = data;
+	},
+
 	findByIngredient: function(query) {
-
-    var filtered =  this.filter(function(item) {
-			return item.get('input_1').toLowerCase() === query.toLowerCase() || item.get('input_2').toLowerCase() === query.toLowerCase();
+		this.reset(this.originalModels);
+		var filtered = this.filter(function(item) {
+			return item.get('input_1').toLowerCase().indexOf(query.toLowerCase()) > -1 || item.get('input_2').toLowerCase().indexOf(query.toLowerCase()) > -1;
 		});
-
-    this.reset(filtered);
+		this.reset(filtered);
 	}
 });
+module.exports = CombinationCollection;
 },{"../models/combination":9,"backbone":2}],8:[function(require,module,exports){
 module.exports=[
     {
@@ -9568,6 +9576,7 @@ module.exports = View.extend({
 });
 },{"../templates/header.jade":11,"backbone":2}],15:[function(require,module,exports){
 var View = require('backbone').View;
+var _ = require('underscore');
 var template = require('../templates/input.jade');
 
 module.exports = View.extend({
@@ -9575,7 +9584,7 @@ module.exports = View.extend({
 	className: 'input',
 
 	events: {
-		'keyup input': 'change'
+		'input input': 'change'
 	},
 
 	initialize: function() {
@@ -9587,11 +9596,17 @@ module.exports = View.extend({
 	},
 
 	change: function(e) {
+		var val = $(e.currentTarget).val();
+		if (!_.isEmpty(val)) {
+			this.setFilter(this.collection, val);
+		} else {
+			this.collection.reset(this.collection.originalModels);
+		}
+	},
 
-
-    console.log(this.collection);
-    console.log(e);
-	}
+	setFilter: _.debounce(function(collection, val) {
+		collection.findByIngredient(val);
+	}, 500)
 
 });
-},{"../templates/input.jade":12,"backbone":2}]},{},[1]);
+},{"../templates/input.jade":12,"backbone":2,"underscore":6}]},{},[1]);
