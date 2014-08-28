@@ -8067,7 +8067,7 @@ buf.push("</div>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n    .fa.fa-bars\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Items\n  .find\n    .fa.fa-search\n");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n    .fa.fa-bars\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Items\n  .find\n    .fa.fa-search");
 }
 }
 )(params); }
@@ -8084,17 +8084,17 @@ var jade_interp;
 ;var locals_for_with = (locals || {});(function (undefined) {
 
 
-buf.push("<message>");
+buf.push("<div class=\"fa fa-search\">");
 
 
-buf.push("</message>");
+buf.push("</div>");
 
 
-buf.push("<input/>");
+buf.push("<input type=\"search\" placeholder=\"Ingredient\"/>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "message\ninput");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".fa.fa-search\ninput(type='search', placeholder='Ingredient')");
 }
 }
 )(params); }
