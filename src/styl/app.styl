@@ -1,13 +1,97 @@
+// Variables
+blue500 = #03a9f4
+blue700 = #0288d1
+blue100 = #b3e5fc
+
+html
+  box-sizing: border-box;
+
+*, *:before, *:after
+  box-sizing: inherit;
+
 body
   font-family 'Roboto', sans-serif;
   padding 0
   margin 0
-
-*
-  outline 1px #dcdcdc solid
+  background #f5f5f5
 
 .header
-  height 56px
+  color #fff
 
-  &.expanded
-    height 128px
+  h1
+    padding 0
+    padding-left 25px
+    margin 0
+    line-height normal
+    font-size 20px
+    font-weight 400
+    display block
+    float left
+
+  .menu
+    height 56px
+    padding 20px
+    padding-top 16px
+    width 100%
+    float left
+    position relative
+    background blue500
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
+
+    .subtitle, .find
+      display none
+
+    &.expanded
+      height 128px
+      .subtitle, .find
+        display block
+
+  .burger
+    float left
+    width 24px
+    height 24px
+    background-image url('icons/menu.svg')
+    background-size 80%
+    background-repeat no-repeat
+    background-position 50%
+
+  .subtitle
+    font-size 24px
+    font-weight 300
+    position absolute
+    bottom 20px
+    left 72px
+    padding 0
+    margin 0
+
+
+.sidebar
+  position fixed
+  left 0
+  top 0
+  width 70%
+  height 100%
+  background #ccc
+  display none
+
+  &.active
+    display block
+
+.find
+  -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
+  width 40px
+  height 40px
+  cursor pointer
+  display block
+  float left
+  position absolute
+  bottom -20px
+  left 20px
+  border-radius 40px
+  background-image url('icons/search.svg')
+  background-repeat no-repeat
+  background-position 50%
+  background-size 40%
+  background-color #ff5722

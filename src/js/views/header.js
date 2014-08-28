@@ -11,7 +11,7 @@ module.exports = View.extend({
 
   render: function() {
     this.$el.html(template({
-      title: 'crafty'
+      title: 'Crafty'
     }));
   }
 });

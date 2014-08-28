@@ -7721,13 +7721,7 @@ try {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (title, undefined, items) {
-
-
-buf.push("<h1>" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)));
-
-
-buf.push("</h1>");
+;var locals_for_with = (locals || {});(function (undefined, items) {
 
 
 buf.push("<ul>");
@@ -7869,9 +7863,9 @@ buf.push("</li>");
 
 buf.push("</ul>");
 
-}.call(this,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined));;return buf.join("");
+}.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "h1= title\nul\n    each item in items\n        li\n            i= item.get('skill')\n            i= item.get('skill_level')\n            strong= item.get('input_1')\n            span +\n            strong= item.get('input_2')\n            span= '='+item.get('output')+'('+item.get('output_category')+')'\n            hr\n            p= item.get('notes')\n");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "ul\n    each item in items\n        li\n            i= item.get('skill')\n            i= item.get('skill_level')\n            strong= item.get('input_1')\n            span +\n            strong= item.get('input_2')\n            span= '='+item.get('output')+'('+item.get('output_category')+')'\n            hr\n            p= item.get('notes')\n");
 }
 }
 )(params); }
@@ -7885,35 +7879,65 @@ try {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (title, undefined) {
+;var locals_for_with = (locals || {});(function (undefined, title) {
 
 
-buf.push("<strong>" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)));
+buf.push("<div class=\"menu\">");
 
 
-buf.push("</strong>");
+buf.push("<div class=\"burger\">");
 
 
-buf.push("<menu>");
+buf.push("</div>");
 
 
-buf.push("</menu>");
+buf.push("<h1>" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)));
 
 
-buf.push("<header>");
+buf.push("</h1>");
 
 
-buf.push("</header>");
+buf.push("<div class=\"sidebar\">");
 
 
-buf.push("<search>");
+buf.push("<ul>");
 
 
-buf.push("</search>");
+buf.push("<li>");
 
-}.call(this,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+
+buf.push("About");
+
+
+buf.push("</li>");
+
+
+buf.push("</ul>");
+
+
+buf.push("</div>");
+
+
+buf.push("<h2 class=\"subtitle\">");
+
+
+buf.push("Combinations");
+
+
+buf.push("</h2>");
+
+
+buf.push("<div class=\"find\">");
+
+
+buf.push("</div>");
+
+
+buf.push("</div>");
+
+}.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "strong= title\nmenu\nheader\nsearch");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Combinations\n  .find\n");
 }
 }
 )(params); }
@@ -7978,7 +8002,7 @@ module.exports = View.extend({
 
   render: function() {
     this.$el.html(template({
-      title: 'crafty'
+      title: 'Crafty'
     }));
   }
 });
