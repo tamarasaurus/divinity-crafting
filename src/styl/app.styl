@@ -5,17 +5,23 @@ blue900 = #01579b
 blue100 = #b3e5fc
 
 html
-  box-sizing: border-box;
-  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing border-box
+  -webkit-font-smoothing subpixel-antialiased
 
 *, *:before, *:after
-  box-sizing: inherit;
+  box-sizing inherit
 
 body
-  font-family 'Roboto', sans-serif;
+  font-family 'Roboto', sans-serif
   padding 0
   margin 0
   background #f5f5f5
+  color rgba(0,0,0,0.72)
+
+h1, h2, h3, h4
+  padding 0
+  margin 0
+  font-weight normal
 
 .header
   color #fff
@@ -38,8 +44,8 @@ body
     float left
     position relative
     background blue500
-    -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
-    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
+    -webkit-box-shadow 0 1px 1px 1px rgba(0,0,0,0.24)
+    box-shadow 0 1px 1px 1px rgba(0,0,0,0.24)
 
     .subtitle, .find
       display none
@@ -81,8 +87,8 @@ body
     display block
 
 .find
-  -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
-  box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
+  -webkit-box-shadow 0 1px 1px 1px rgba(0,0,0,0.24)
+  box-shadow 0 1px 1px 1px rgba(0,0,0,0.24)
   width 40px
   height 40px
   cursor pointer
@@ -100,15 +106,81 @@ ul
   margin 0
   padding 5px
 
+.arrow
+  &:before
+    position absolute
+    right 20px
+    font-size 18px
+    color #999
+    cursor pointer
+    display inline-block
+    font-family 'FontAwesome'
+    content '\f107'
+  &.active
+    &:before
+      content '\f106'
+
+
 .item
   display block
+  position relative
   width 100%
   height auto
   float left
-  padding 20px
   background #fff
-  -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
-  box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
+  -webkit-box-shadow 0 1px 1px 1px rgba(0,0,0,0.24)
+  box-shadow 0 1px 1px 1px rgba(0,0,0,0.24)
   margin-bottom 8px
   border-radius 2px
+  p
+    margin-top 0
+    font-weight 300
+    font-size 14px
+
+.item-content
+  padding 20px
+
+.item-title
+  font-size 20px
+  font-weight 400
+
+.item-subtitle
+  text-transform uppercase
+  font-size 12px
+  display block
+  color rgba(0,0,0,0.54)
+
+.item-inputs
+  display block
+  float left
+  width 100%
+  margin-top 10px
+  background #f9f9f9
+
+.fa.fa-bolt
+  width 4%
+  color rgba(0,0,0,0.10)
+  height 40px
+  line-height 40px
+  display block
+  float left
+
+.item-input
+  width 48%
+  display block
+  float left
+  line-height 40px
+  text-align center
+  height 40px
+  font-size 12px
+  text-transform uppercase
+  color rgba(0,0,0,0.54)
+  font-weight 400
+
+.item-section-title
+  font-size 14px
+  font-weight 500
+  line-height 22px
+  // border-bottom 1px rgba(0,0,0,0.10) solid
+  padding-top 20px
 

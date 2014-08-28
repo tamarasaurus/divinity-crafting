@@ -7741,58 +7741,137 @@ buf.push("<li class=\"item\">");
 
 
 
+buf.push("<div class=\"item-content\">");
+
+
 buf.push("<div class=\"arrow\">");
 
 
 buf.push("</div>");
 
 
-buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill')) ? "" : jade_interp)));
+buf.push("<h3 class=\"item-title\">" + (jade.escape(null == (jade_interp = item.get('output')) ? "" : jade_interp)));
 
 
-buf.push("</i>");
+buf.push("</h3>");
 
 
-buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill_level')) ? "" : jade_interp)));
-
-
-buf.push("</i>");
-
-
-buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
-
-
-buf.push("</strong>");
-
-
-buf.push("<span>");
-
-
-buf.push("+");
+buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = item.get('output_category')) ? "" : jade_interp)));
 
 
 buf.push("</span>");
 
 
-buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+if ( item.get('skill'))
+{
 
 
-buf.push("</strong>");
-
-
-buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')+'('+item.get('output_category')+')') ? "" : jade_interp)));
+buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
 
 
 buf.push("</span>");
 
 
-buf.push("<hr/>");
+}
+
+
+buf.push("<endif>");
+
+
+buf.push("</endif>");
+
+
+if ( item.get('notes'))
+{
+
+
+buf.push("<h4 class=\"item-section-title\">");
+
+
+buf.push("Notes");
+
+
+buf.push("</h4>");
 
 
 buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('notes')) ? "" : jade_interp)));
 
 
 buf.push("</p>");
+
+
+}
+
+
+buf.push("<endif>");
+
+
+buf.push("</endif>");
+
+
+if ( item.get('bonus'))
+{
+
+
+buf.push("<h4 class=\"item-section-title\">");
+
+
+buf.push("Bonus");
+
+
+buf.push("</h4>");
+
+
+buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('bonus')) ? "" : jade_interp)));
+
+
+buf.push("</p>");
+
+
+}
+
+
+buf.push("</div>");
+
+
+buf.push("<div class=\"item-inputs\">");
+
+
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+
+
+buf.push("</div>");
+
+
+buf.push("<div class=\"fa fa-bolt\">");
+
+
+buf.push("</div>");
+
+
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+
+
+buf.push("</div>");
+
+
+buf.push("</div>");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7812,58 +7891,137 @@ buf.push("<li class=\"item\">");
 
 
 
+buf.push("<div class=\"item-content\">");
+
+
 buf.push("<div class=\"arrow\">");
 
 
 buf.push("</div>");
 
 
-buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill')) ? "" : jade_interp)));
+buf.push("<h3 class=\"item-title\">" + (jade.escape(null == (jade_interp = item.get('output')) ? "" : jade_interp)));
 
 
-buf.push("</i>");
+buf.push("</h3>");
 
 
-buf.push("<i>" + (jade.escape(null == (jade_interp = item.get('skill_level')) ? "" : jade_interp)));
-
-
-buf.push("</i>");
-
-
-buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
-
-
-buf.push("</strong>");
-
-
-buf.push("<span>");
-
-
-buf.push("+");
+buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = item.get('output_category')) ? "" : jade_interp)));
 
 
 buf.push("</span>");
 
 
-buf.push("<strong>" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+if ( item.get('skill'))
+{
 
 
-buf.push("</strong>");
-
-
-buf.push("<span>" + (jade.escape(null == (jade_interp = '='+item.get('output')+'('+item.get('output_category')+')') ? "" : jade_interp)));
+buf.push("<span class=\"item-subtitle\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
 
 
 buf.push("</span>");
 
 
-buf.push("<hr/>");
+}
+
+
+buf.push("<endif>");
+
+
+buf.push("</endif>");
+
+
+if ( item.get('notes'))
+{
+
+
+buf.push("<h4 class=\"item-section-title\">");
+
+
+buf.push("Notes");
+
+
+buf.push("</h4>");
 
 
 buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('notes')) ? "" : jade_interp)));
 
 
 buf.push("</p>");
+
+
+}
+
+
+buf.push("<endif>");
+
+
+buf.push("</endif>");
+
+
+if ( item.get('bonus'))
+{
+
+
+buf.push("<h4 class=\"item-section-title\">");
+
+
+buf.push("Bonus");
+
+
+buf.push("</h4>");
+
+
+buf.push("<p>" + (jade.escape(null == (jade_interp = item.get('bonus')) ? "" : jade_interp)));
+
+
+buf.push("</p>");
+
+
+}
+
+
+buf.push("</div>");
+
+
+buf.push("<div class=\"item-inputs\">");
+
+
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+
+
+buf.push("</div>");
+
+
+buf.push("<div class=\"fa fa-bolt\">");
+
+
+buf.push("</div>");
+
+
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+
+
+buf.push("</div>");
+
+
+buf.push("</div>");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
