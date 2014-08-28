@@ -8101,7 +8101,7 @@ buf.push("</div>");
 buf.push("<h2 class=\"subtitle\">");
 
 
-buf.push("Combinations");
+buf.push("Items");
 
 
 buf.push("</h2>");
@@ -8123,7 +8123,7 @@ buf.push("</div>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n    .fa.fa-bars\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Combinations\n  .find\n    .fa.fa-search\n");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n    .fa.fa-bars\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Items\n  .find\n    .fa.fa-search\n");
 }
 }
 )(params); }
