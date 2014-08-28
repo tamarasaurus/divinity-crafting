@@ -5,10 +5,17 @@ var data = require('./data');
 
 var Combinations = require('./collections/combinations');
 var List = require('./views/combinations');
+var Header = require('./views/header');
+var Input = require('./views/input');
 
 var combinations = new Combinations(data);
-var list = new List({collection: combinations, el: $('.main')});
-},{"./collections/combinations":6,"./data":7,"./views/combinations":10,"backbone":2}],2:[function(require,module,exports){
+
+var list = new List({collection: combinations, el: $('.list')});
+var header = new Header({el: $('.header')});
+var input = new Input({el: $('.search')});
+
+console.log(list, header, input);
+},{"./collections/combinations":6,"./data":7,"./views/combinations":12,"./views/header":13,"./views/input":14,"backbone":2}],2:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -7870,6 +7877,75 @@ buf.push("</ul>");
 )(params); }
 
 },{"jade/lib/runtime.js":5}],10:[function(require,module,exports){
+var jade = require('jade/lib/runtime.js');
+module.exports=function(params) { if (params) {params.require = require;} return (
+function template(locals) {
+var jade_debug = [{ lineno: 1, filename: "/Users/chahinet2r/Sites/divinity-crafting/src/js/templates/header.jade" }];
+try {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+;var locals_for_with = (locals || {});(function (title, undefined) {
+
+
+buf.push("<strong>" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)));
+
+
+buf.push("</strong>");
+
+
+buf.push("<menu>");
+
+
+buf.push("</menu>");
+
+
+buf.push("<header>");
+
+
+buf.push("</header>");
+
+
+buf.push("<search>");
+
+
+buf.push("</search>");
+
+}.call(this,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+} catch (err) {
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "strong= title\nmenu\nheader\nsearch");
+}
+}
+)(params); }
+
+},{"jade/lib/runtime.js":5}],11:[function(require,module,exports){
+var jade = require('jade/lib/runtime.js');
+module.exports=function(params) { if (params) {params.require = require;} return (
+function template(locals) {
+var jade_debug = [{ lineno: 1, filename: "/Users/chahinet2r/Sites/divinity-crafting/src/js/templates/input.jade" }];
+try {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+;var locals_for_with = (locals || {});(function (undefined) {
+
+
+buf.push("<message>");
+
+
+buf.push("</message>");
+
+
+buf.push("<input/>");
+
+}.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+} catch (err) {
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "message\ninput");
+}
+}
+)(params); }
+
+},{"jade/lib/runtime.js":5}],12:[function(require,module,exports){
 var View = require('backbone').View;
 var template = require('../templates/combinations.jade');
 
@@ -7888,4 +7964,38 @@ module.exports = View.extend({
 		}));
 	}
 });
-},{"../templates/combinations.jade":9,"backbone":2}]},{},[1]);
+},{"../templates/combinations.jade":9,"backbone":2}],13:[function(require,module,exports){
+var View = require('backbone').View;
+var template = require('../templates/header.jade');
+
+module.exports = View.extend({
+  tagName: 'div',
+  className: 'header',
+
+  initialize: function() {
+    this.render();
+  },
+
+  render: function() {
+    this.$el.html(template({
+      title: 'crafty'
+    }));
+  }
+});
+},{"../templates/header.jade":10,"backbone":2}],14:[function(require,module,exports){
+var View = require('backbone').View;
+var template = require('../templates/input.jade');
+
+module.exports = View.extend({
+  tagName: 'div',
+  className: 'input',
+
+  initialize: function() {
+    this.render();
+  },
+
+  render: function() {
+    this.$el.html(template());
+  }
+});
+},{"../templates/input.jade":11,"backbone":2}]},{},[1]);

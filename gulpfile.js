@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
+var stylus = require('gulp-stylus');
 var jade = require('gulp-jade');
 var jadeify = require('browserify-jade').jade({
 	pretty: false
@@ -16,6 +17,12 @@ var compile_jade = function() {
 		.pipe(jade())
 		.pipe(gulp.dest('./build'))
         .pipe(connect.reload());
+};
+
+var compile_stylus = function(){
+  gulp.src('./css/**/*.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest('./css'));
 };
 
 var compile_scripts = function() {
@@ -38,6 +45,10 @@ var compile_scripts = function() {
 gulp.task('build', function() {
 	compile_scripts();
 	compile_jade();
+});
+
+gulp.task('stylus', function () {
+  compile_stylus();
 });
 
 
