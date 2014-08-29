@@ -444,10 +444,10 @@
 	"input_2": "Thread",
 	"output": "Amulet (Rabbit Foot - Lucky)",
 	"skill": "Crafting",
-	"skill_level": 1,
-	"bonus": "",
+	"skill_level": 2,
+	"bonus": "Lucky Charm: +1, +Movement",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Rabbit Foot - Lucky",
@@ -455,7 +455,7 @@
 	"output": "Super Amulet (Rabbit Foot - Lucky)",
 	"skill": "Crafting",
 	"skill_level": 3,
-	"bonus": "",
+	"bonus": "Lucky Charm: +1, +Movement",
 	"notes": "Leveled to player",
 	"source": []
 }, {
@@ -525,9 +525,9 @@
 	"output": "Amulet (Chicken Foot)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Initiative +1",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Chicken Foot",
@@ -535,9 +535,9 @@
 	"output": "Belt (Chicken Foot)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Initiative +1",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Chicken Foot",
@@ -595,9 +595,9 @@
 	"output": "Amulet (Claw)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Strength: +1 (HL1) / +2 (HL17)",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Claw",
@@ -715,9 +715,9 @@
 	"output": "Amulet (Eye - Creepy)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Perception: +1 (HL1) / +2 (HL17), + Sight",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Eye - Creepy",
@@ -745,9 +745,9 @@
 	"output": "Amulet (Feather)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Dexterity: +1 (HL1) / +2 (HL17)",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Feather",
@@ -795,9 +795,9 @@
 	"output": "Amulet (Feather - Fancy)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Dexterity: +1 (HL1) / +2 (HL17), + HP",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["(The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Feather - Fancy",
@@ -835,9 +835,9 @@
 	"output": "Amulet (Rat Tail)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Poison Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Rat Tail",
@@ -875,9 +875,9 @@
 	"output": "Amulet (Rat Tail - Long)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Poison Resistance: +5%(HL1) / +10%(HL4) / +15%(HL9) / +20%(HL14) / +25%(HL19)",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Rat Tail - Long",
@@ -934,10 +934,10 @@
 	"input_2": "Thread",
 	"output": "Amulet (Skull - Ancient)",
 	"skill": "Crafting",
-	"skill_level": 1,
-	"bonus": "",
+	"skill_level": 3,
+	"bonus": "Intelligence: +1(HL1) / +2 HL17), Earth Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Skull - Ancient",
@@ -1005,9 +1005,9 @@
 	"output": "Magic Starfish - Glowing",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "+HP, Water Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Starfish - Glowing",
@@ -1085,9 +1085,9 @@
 	"output": "Amulet (Tooth - Sharp)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Charisma: +1",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Tooth - Sharp",
@@ -1115,9 +1115,9 @@
 	"output": "Amulet (Tusk)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Loremaster: +1",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Tusk",
@@ -1145,9 +1145,9 @@
 	"output": "Magic Tusk - Large",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Loremaster: +1. Intelligence: +1(HL1) / +2(HL17). Air Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["The Adventurer's Field Guide XIX"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Tusk - Large",
