@@ -13,6 +13,7 @@ module.exports = View.extend({
 	initialize: function() {
 		this.collection.on('reset', this.render, this);
 		this.render();
+
 	},
 
 	toggle: function(e) {
