@@ -3077,9 +3077,9 @@
 	"input_1": "Mobile Kitchen / Oven / Furnace",
 	"input_2": "Cold Mashed Potatoes",
 	"output": "Cooked Mashed Potatoes",
-	"skill": "Strength: +1, Heals: +71",
+	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Heals: +71",
 	"notes": "",
 	"source": []
 }, {

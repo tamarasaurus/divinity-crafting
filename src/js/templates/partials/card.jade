@@ -12,7 +12,12 @@
     p= item.get('bonus')
 
   if item.get('skill')
-    h4.item-section-title.highlight= item.get('skill') + ' ' + item.get('skill_level')
+    h4.item-section-title.highlight
+      if item.get('skill').toLowerCase() === 'crafting'
+        .fa.fa-flask
+      else if item.get('skill').toLowerCase() === 'blacksmithing'
+        .fa.fa-gavel
+      span= item.get('skill') + ' ' + item.get('skill_level')
 
 .item-inputs
   .item-input= item.get('input_1')

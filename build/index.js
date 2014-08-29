@@ -4613,7 +4613,7 @@ var CombinationCollection = Collection.extend({
 	findByIngredient: function(query) {
 		this.reset(this.originalModels);
 		var filtered = this.filter(function(item) {
-			return item.get('input_1').toLowerCase().indexOf(query.toLowerCase()) > -1 || item.get('input_2').toLowerCase().indexOf(query.toLowerCase()) > -1;
+			return item.get('input_1').toLowerCase().indexOf(query.toLowerCase()) > -1 || item.get('input_2').toLowerCase().indexOf(query.toLowerCase()) > -1 || item.get('output').toLowerCase().indexOf(query.toLowerCase()) > -1;
 		});
 		this.reset(filtered);
 	}
@@ -7699,9 +7699,9 @@ module.exports=[{
 	"input_1": "Mobile Kitchen / Oven / Furnace",
 	"input_2": "Cold Mashed Potatoes",
 	"output": "Cooked Mashed Potatoes",
-	"skill": "Strength: +1, Heals: +71",
+	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Heals: +71",
 	"notes": "",
 	"source": []
 }, {
@@ -9756,7 +9756,37 @@ if ( item.get('skill'))
 {
 
 
-buf.push("<h4 class=\"item-section-title highlight\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
+buf.push("<h4 class=\"item-section-title highlight\">");
+
+
+if ( item.get('skill').toLowerCase() === 'crafting')
+{
+
+
+buf.push("<div class=\"fa fa-flask\">");
+
+
+buf.push("</div>");
+
+
+}
+else if ( item.get('skill').toLowerCase() === 'blacksmithing')
+{
+
+
+buf.push("<div class=\"fa fa-gavel\">");
+
+
+buf.push("</div>");
+
+
+}
+
+
+buf.push("<span>" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
+
+
+buf.push("</span>");
 
 
 buf.push("</h4>");
@@ -9878,7 +9908,37 @@ if ( item.get('skill'))
 {
 
 
-buf.push("<h4 class=\"item-section-title highlight\">" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
+buf.push("<h4 class=\"item-section-title highlight\">");
+
+
+if ( item.get('skill').toLowerCase() === 'crafting')
+{
+
+
+buf.push("<div class=\"fa fa-flask\">");
+
+
+buf.push("</div>");
+
+
+}
+else if ( item.get('skill').toLowerCase() === 'blacksmithing')
+{
+
+
+buf.push("<div class=\"fa fa-gavel\">");
+
+
+buf.push("</div>");
+
+
+}
+
+
+buf.push("<span>" + (jade.escape(null == (jade_interp = item.get('skill') + ' ' + item.get('skill_level')) ? "" : jade_interp)));
+
+
+buf.push("</span>");
 
 
 buf.push("</h4>");
