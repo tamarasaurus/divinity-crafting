@@ -124,9 +124,6 @@ ul
     display inline-block
     font-family 'FontAwesome'
     content '\f107'
-  &.active
-    &:before
-      content '\f106'
 
 
 .item
@@ -147,6 +144,15 @@ ul
 
 .item-content
   padding 20px
+
+  .item-section-title, p, .item-section-title
+    display none
+
+  &.active
+    .item-section-title, p, .item-section-title
+      display block
+    .arrow:before
+        content '\f106'
 
 .item-title
   font-size 20px
