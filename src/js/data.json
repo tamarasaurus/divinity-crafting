@@ -366,7 +366,7 @@
 	"skill": "Crafting",
 	"skill_level": 5,
 	"bonus": "",
-	"notes": "",
+	"notes": "These allow you to be immune to slipping",
 	"source": []
 }, {
 	"output_category": "Armor - Magic",
@@ -2650,7 +2650,7 @@
 	"skill": "",
 	"skill_level": null,
 	"bonus": "",
-	"notes": "",
+	"notes": "Used for Explosive, Slowdown Arrows",
 	"source": []
 }, {
 	"output_category": "Crafting Basic",
@@ -2660,7 +2660,7 @@
 	"skill": "",
 	"skill_level": null,
 	"bonus": "",
-	"notes": "",
+	"notes": "Branches are useful to make Staves & Arrowshafts.  Wood Chips become paper for scrolls and books.",
 	"source": ["The Adventurer's Field Guide V"]
 }, {
 	"output_category": "Crafting Basic",
@@ -2670,7 +2670,7 @@
 	"skill": "Crafting",
 	"skill_level": 1,
 	"bonus": "",
-	"notes": "",
+	"notes": "Used to improve cloth armor, make homemade boots, homemade leather armor, and backpacks.",
 	"source": ["The Adventurer's Field Guide XX"]
 }, {
 	"output_category": "Crafting Basic",
@@ -2710,7 +2710,7 @@
 	"skill": "",
 	"skill_level": null,
 	"bonus": "Heals: +13",
-	"notes": "Wells & barrels",
+	"notes": "Used for Steam, Static Cloud Arrows",
 	"source": []
 }, {
 	"output_category": "Crafting Basic",
@@ -4560,7 +4560,7 @@
 	"skill": "Crafting",
 	"skill_level": 1,
 	"bonus": "",
-	"notes": "Shears + Sheep or shops can provide Wool.  4x Wool = 2x yarn = 1x Rope",
+	"notes": "Shears + Sheep or shops can provide Wool.  4x Wool = 2x yarn = 1x Rope. Rope is used to make Belts and Backpacks.",
 	"source": []
 }, {
 	"output_category": "Useless",
