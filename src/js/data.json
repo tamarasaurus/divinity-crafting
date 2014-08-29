@@ -405,9 +405,9 @@
 	"output": "Belt (Rabbit Foot)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Lucky Charm: +1",
 	"notes": "Leveled to player",
-	"source": []
+	"source": ["Secrets of the Scroll III"]
 }, {
 	"output_category": "Armor - Magic",
 	"input_1": "Magic Rabbit Foot",
@@ -844,8 +844,8 @@
 	"input_2": "Rope",
 	"output": "Belt (Rat Tail)",
 	"skill": "Crafting",
-	"skill_level": 1,
-	"bonus": "",
+	"skill_level": 2,
+	"bonus": "Poison Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
 	"source": []
 }, {
@@ -905,7 +905,7 @@
 	"output": "Belt (Skull)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Constitution: +1 (HL1) / +2 (HL17)",
 	"notes": "Leveled to player",
 	"source": []
 }, {
@@ -926,7 +926,7 @@
 	"skill": "Crafting",
 	"skill_level": null,
 	"bonus": "",
-	"notes": "Ancient Human Skill gives a better variant",
+	"notes": "Ancient Human Skull gives a better variant",
 	"source": []
 }, {
 	"output_category": "Armor - Magic",
@@ -945,7 +945,7 @@
 	"output": "Ring (Skull - Ancient)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Constitution: +1(HL1) / +2 HL17), Earth Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
 	"source": []
 }, {
@@ -1055,7 +1055,17 @@
 	"output": "Belt (Tooth)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Charisma: +1",
+	"notes": "Leveled to player",
+	"source": []
+}, {
+	"output_category": "Armor - Magic",
+	"input_1": "Magic Tooth",
+	"input_2": "Rope",
+	"output": "Belt (Tooth - Sharp)",
+	"skill": "Crafting",
+	"skill_level": 2,
+	"bonus": "Charisma: +1. Fire Resistance: + 5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
 	"source": []
 }, {
@@ -1125,7 +1135,7 @@
 	"output": "Belt (Tusk)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "Body Building: +1",
 	"notes": "Leveled to player",
 	"source": []
 }, {
@@ -2679,7 +2689,7 @@
 	"output": "Bottle of Water",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +13",
 	"notes": "Wells & barrels",
 	"source": []
 }, {
@@ -2689,7 +2699,7 @@
 	"output": "Mug of Water",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +13",
 	"notes": "Wells & barrels",
 	"source": []
 }, {
@@ -2699,7 +2709,7 @@
 	"output": "Cup of Water",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +13",
 	"notes": "Wells & barrels",
 	"source": []
 }, {
@@ -2709,7 +2719,7 @@
 	"output": "Bucket of Water",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +13",
 	"notes": "Wells & barrels",
 	"source": []
 }, {
@@ -2719,9 +2729,9 @@
 	"output": "Dough, Empty Bucket",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +7",
 	"notes": "",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino", "Patty Cake", "Patty Cake I"]
 }, {
 	"output_category": "Food",
 	"input_1": "Cup of Water",
@@ -2729,9 +2739,9 @@
 	"output": "Dough, Empty Cup",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +7",
 	"notes": "",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino", "Patty Cake", "Patty Cake I"]
 }, {
 	"output_category": "Food",
 	"input_1": "Mug of Water",
@@ -2739,9 +2749,9 @@
 	"output": "Dough, Empty Mug",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +7",
 	"notes": "",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino", "Patty Cake", "Patty Cake I"]
 }, {
 	"output_category": "Food",
 	"input_1": "Bottle of Water",
@@ -2779,7 +2789,7 @@
 	"output": "Mug of Wine, Empty Bottle",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +32 20% chance of getting Drunk",
 	"notes": "",
 	"source": []
 }, {
@@ -2799,7 +2809,7 @@
 	"output": "Mug of Beer, Empty Bottle",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Intelligence: -1, Heals: +22 20% chance of getting Drunk",
 	"notes": "There does not appear to be a matching recipe for empty cups",
 	"source": []
 }, {
@@ -2817,7 +2827,7 @@
 	"input_1": "Beer Barrel",
 	"input_2": "Empty Mug",
 	"output": "Mug of Beer",
-	"skill": "",
+	"skill": "Intelligence: -1, Heals: +22 20% chance of getting Drunk",
 	"skill_level": null,
 	"bonus": "",
 	"notes": "",
@@ -2829,7 +2839,7 @@
 	"output": "Bottle of Beer",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Intelligence: -1, Heals: +22 20% chance of getting Drunk",
 	"notes": "",
 	"source": []
 }, {
@@ -2849,7 +2859,7 @@
 	"output": "Bottle of Wine",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +32, 20% chance of getting Drunk",
 	"notes": "",
 	"source": []
 }, {
@@ -2881,7 +2891,7 @@
 	"skill_level": null,
 	"bonus": "",
 	"notes": "No different from Minor Poison Potion",
-	"source": []
+	"source": ["Rat Extermination"]
 }, {
 	"output_category": "Food",
 	"input_1": "Poison Potion",
@@ -2889,7 +2899,7 @@
 	"output": "Poisoned version of food",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "100% chance to set Poisoned status",
 	"notes": "",
 	"source": []
 }, {
@@ -2919,7 +2929,7 @@
 	"output": "Poisoned version of food",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +7, Poison Resistance: +10",
 	"notes": "No different from Minor Poison Potion",
 	"source": []
 }, {
@@ -2931,7 +2941,7 @@
 	"skill_level": null,
 	"bonus": "",
 	"notes": "Repair hammer also works",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Tomato Sauce",
@@ -2939,9 +2949,9 @@
 	"output": "Pizza Dough",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +13",
 	"notes": "",
-	"source": []
+	"source": ["Patty Cake", "Patty Cake III", "Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Tomato Sauce",
@@ -2949,7 +2959,7 @@
 	"output": "Elven Stew",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Dexterity: +1, Heals: +50",
 	"notes": "",
 	"source": []
 }, {
@@ -2959,9 +2969,9 @@
 	"output": "Cheese Dough",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +13",
 	"notes": "",
-	"source": []
+	"source": ["Patty Cake", "Patty Cake III", "Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Dough",
@@ -2969,9 +2979,9 @@
 	"output": "Apple Pie Dough",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +13",
 	"notes": "",
-	"source": []
+	"source": ["Patty Cake", "Patty Cake III"]
 }, {
 	"output_category": "Food",
 	"input_1": "Dough",
@@ -2979,9 +2989,9 @@
 	"output": "Fish Dough",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Speed: -1, Heals: +13",
 	"notes": "",
-	"source": []
+	"source": ["Patty Cake", "Patty Cake III", "Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Oven / Furnace",
@@ -2989,9 +2999,9 @@
 	"output": "Cheese Bread",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Constitution: +1, Heals: +22",
 	"notes": "",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Oven / Furnace",
@@ -2999,7 +3009,7 @@
 	"output": "Apple Pie",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +42, Poison Resistance: +10",
 	"notes": "",
 	"source": []
 }, {
@@ -3009,9 +3019,9 @@
 	"output": "Cyseal Pie",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Intelligence: +1, Speed: -1, Heals: +71",
 	"notes": "",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Oven / Furnace",
@@ -3019,9 +3029,9 @@
 	"output": "Pizza",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Constitution: +1, Speed: -1, Heals: +61",
 	"notes": "",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Oven / Furnace",
@@ -3029,9 +3039,9 @@
 	"output": "Bread",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Speed: -1, Heals: +10",
 	"notes": "",
-	"source": []
+	"source": ["Crafting and Cooking with Maradino"]
 }, {
 	"output_category": "Food",
 	"input_1": "Knife / Dagger",
@@ -3039,7 +3049,7 @@
 	"output": "Cold Rivellon Fires",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals +7",
 	"notes": "",
 	"source": []
 }, {
@@ -3049,7 +3059,7 @@
 	"output": "Cold Mashed Potatoes",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Heals: +71",
 	"notes": "",
 	"source": []
 }, {
@@ -3059,7 +3069,7 @@
 	"output": "Dwarven Stew",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Heals: +74, 100% chance to get Slowed",
 	"notes": "",
 	"source": []
 }, {
@@ -3067,7 +3077,7 @@
 	"input_1": "Mobile Kitchen / Oven / Furnace",
 	"input_2": "Cold Mashed Potatoes",
 	"output": "Cooked Mashed Potatoes",
-	"skill": "",
+	"skill": "Strength: +1, Heals: +71",
 	"skill_level": null,
 	"bonus": "",
 	"notes": "",
@@ -3079,7 +3089,7 @@
 	"output": "Cooked Rivellon Fries",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Constitution: +1, Dexterity: -1, Heals: +71",
 	"notes": "",
 	"source": []
 }, {
@@ -3089,7 +3099,7 @@
 	"output": "Pumpkin Soup",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Perception: +1, Heals: +42",
 	"notes": "",
 	"source": []
 }, {
@@ -3099,7 +3109,7 @@
 	"output": "Orange Juice",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Dexterity: +1, Heals: +18",
 	"notes": "Does this work with mugs?",
 	"source": []
 }, {
@@ -3109,8 +3119,8 @@
 	"output": "Apple Juice",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
-	"notes": "Does this work with mugs?",
+	"bonus": "Heals: +18, Poison Resistance: +10",
+	"notes": "Also works with mugs",
 	"source": []
 }, {
 	"output_category": "Food",
@@ -3119,7 +3129,7 @@
 	"output": "Dinner",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Heals: +74",
 	"notes": "",
 	"source": []
 }, {
@@ -3149,7 +3159,7 @@
 	"output": "Cup of Milk",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +18, Armor: +21",
 	"notes": "You will lose the bucket",
 	"source": []
 }, {
@@ -3159,7 +3169,7 @@
 	"output": "Bucket of Milk",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +18, Armor: +21",
 	"notes": "You can talk to the cow with the bucket in your inventory (needs Pet Pal)",
 	"source": []
 }, {
@@ -3169,7 +3179,7 @@
 	"output": "Boiled Potato",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Constitution: +1, Heals: +22",
 	"notes": "",
 	"source": []
 }, {
@@ -3179,7 +3189,7 @@
 	"output": "Honey",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Intelligence: +1, Heals: +16, Poison Resistance: +15%",
 	"notes": "",
 	"source": []
 }, {
@@ -3189,7 +3199,7 @@
 	"output": "Milk Honey",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Heals: +52, Armor: +32, Poison Resistance: +20%",
 	"notes": "",
 	"source": []
 }, {
@@ -3199,7 +3209,7 @@
 	"output": "Porridge",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Heals: +18",
 	"notes": "",
 	"source": []
 }, {
@@ -3209,7 +3219,7 @@
 	"output": "Potato Porridge",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "Strength: +1, Heals: +39",
 	"notes": "",
 	"source": []
 }, {
@@ -3809,7 +3819,7 @@
 	"output": "Cooked Ishamashell",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "100% chance to set Infectious Diseased status",
 	"notes": "This that shell you meet on the beach that wants to be tossed back into the sea",
 	"source": []
 }, {
