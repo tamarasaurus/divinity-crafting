@@ -107,7 +107,7 @@
 	"skill_level": 1,
 	"bonus": "",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread",
@@ -117,7 +117,7 @@
 	"skill_level": 2,
 	"bonus": "",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread",
@@ -127,7 +127,7 @@
 	"skill_level": 3,
 	"bonus": "",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread",
@@ -137,7 +137,7 @@
 	"skill_level": 4,
 	"bonus": "",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread",
@@ -145,9 +145,9 @@
 	"output": "Homemade Cloth Chest Armor",
 	"skill": "Crafting",
 	"skill_level": 5,
-	"bonus": "Sm VIT+, Sm LCK+, Sm. Armor+",
+	"bonus": "Armor Rating, HP, or Lucky Charm bonus.",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread (Magic)",
@@ -167,7 +167,7 @@
 	"skill_level": 2,
 	"bonus": "",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread",
@@ -177,7 +177,7 @@
 	"skill_level": 3,
 	"bonus": "",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread",
@@ -187,7 +187,7 @@
 	"skill_level": 4,
 	"bonus": "",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Needle & Thread (Magic)",
@@ -197,7 +197,7 @@
 	"skill_level": 5,
 	"bonus": "Sm VIT+, Sm LCK+, Sm. Armor+",
 	"notes": "Leveled to player",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVI"]
 }, {
 	"output_category": "Armor",
 	"input_1": "Hammer",
@@ -495,7 +495,7 @@
 	"output": "Antler Helmet",
 	"skill": "",
 	"skill_level": null,
-	"bonus": "",
+	"bonus": "(IL=HL. Constitution: +1(HL1) / +2(HL17). Water Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21))",
 	"notes": "",
 	"books": []
 }, {
@@ -655,7 +655,7 @@
 	"output": "Helmet (Crab Claw)",
 	"skill": "Crafting",
 	"skill_level": 1,
-	"bonus": "",
+	"bonus": "+HP bonus",
 	"notes": "Leveled to player",
 	"books": []
 }, {
@@ -804,8 +804,8 @@
 	"input_2": "Any Leather Helmet",
 	"output": "Helmet (Feather - Fancy)",
 	"skill": "Crafting",
-	"skill_level": 1,
-	"bonus": "",
+	"skill_level": 2,
+	"bonus": "Sneaking: +1. Air Resistance: +5%(HL1) / +10%(HL6) / +15%(HL11) / +20%(HL16) / +25%(HL21)",
 	"notes": "Leveled to player",
 	"books": []
 }, {
@@ -1014,8 +1014,8 @@
 	"input_2": "Any Leather Helmet",
 	"output": "Helmet (Starfish - Glowing)",
 	"skill": "Crafting",
-	"skill_level": 1,
-	"bonus": "",
+	"skill_level": 2,
+	"bonus": "Leadership: +1. Water Resistance: +5%(HL1) / +10%(HL4) / +15%(HL9) / +20%(HL14) / +25%(HL19)",
 	"notes": "Leveled to player",
 	"books": []
 }, {
@@ -3422,12 +3422,12 @@
 	"output_category": "Special",
 	"input_1": "Hammer",
 	"input_2": "Cooking Pot",
-	"output": "Cracked Cookpot Helmet",
+	"output": "Cracked/Battered Cookpot Helmet",
 	"skill": "",
 	"skill_level": null,
 	"bonus": "",
 	"notes": "",
-	"books": []
+	"books": ["The Adventurer's Field Guide XVIII"]
 }, {
 	"output_category": "Special",
 	"input_1": "Buffalo Amulet",
@@ -3527,7 +3527,7 @@
 	"skill_level": 5,
 	"bonus": "",
 	"notes": "",
-	"books": []
+	"books": [""]
 }, {
 	"output_category": "Spell",
 	"input_1": "Parchment",
@@ -4036,6 +4036,36 @@
 	"skill": "Crafting",
 	"skill_level": 2,
 	"bonus": "[C2]: Earth Resistance Shield, Summon Earth Elemental, Fortify, Immune to Poisoning, Magical Poison Dart, Summon Wolf, Bless, or Midnight Oil. [C3]: + Bolder Dash, Petrifying Touch, or Summon Bloodswarm. [C4]: + Deadly Spores, Natures Curse, Acid Breath, or Summon Spider. [C5]: + Earthquake.",
+	"notes": "",
+	"books": ["Secrets of the Scroll V"]
+}, {
+	"output_category": "Spell",
+	"input_1": "Blank Fire Scroll",
+	"input_2": "Magic Ink Pot and Quill",
+	"output": "Random Fire Scroll",
+	"skill": "Crafting",
+	"skill_level": 2,
+	"bonus": "[C2]: Burning Touch, Smokescreen, Small Fireball, Fire Resistance Shield, Summon Fire Elemental, Flare, Haste, Immune to Freezing, or Burn My Eyes. [C3]: + Purifying Fire, or Firefly. [C4]: + Immolation. [C5]: + Meteor Shower, or Infectious Flame.",
+	"notes": "",
+	"books": ["Secrets of the Scroll V"]
+}, {
+	"output_category": "Spell",
+	"input_1": "Blank Water Scroll",
+	"input_2": "Magic Ink Pot and Quill",
+	"output": "Random Water Scroll",
+	"skill": "Crafting",
+	"skill_level": 2,
+	"bonus": "[C2]: Slow Current, Ice Shard, Summon Ice Elemental, Rain, Minor Heal, Slow, Water of Life, or Water Resistance Shield. [C3]: + Cleansing Water, Pierding Ice Shard, Ice Wall, Immunity to Burning, or Strong Regenerate. [C4]: + Mass Disease, Freezing Touch. [C5]: + Hail Attack, or Winterblast.",
+	"notes": "",
+	"books": ["Secrets of the Scroll V"]
+}, {
+	"output_category": "Spell",
+	"input_1": "Blank Witchcraft Scroll",
+	"input_2": "Magic Ink Pot and Quill",
+	"output": "Random Witchcraft Scroll",
+	"skill": "Crafting",
+	"skill_level": 2,
+	"bonus": "[C2]: Bloodletting, Blind, Magical Unlock, Resurrect (Scroll only), Malediction, Oath Of Desecration, or Enfeebling Touch. [C3]: + Destroy Summon, Summon Undead Warrior, Drain Willpower, Absorb The Elements, or Vampiric Touch. [C4]: + Horrific Scream, Soulsap, Summon Armoured Undead Decapitator, or Mass Weakness. [C5]: + Death Punch, or Invulnerability.",
 	"notes": "",
 	"books": ["Secrets of the Scroll V"]
 }, {
