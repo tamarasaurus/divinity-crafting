@@ -20,3 +20,4 @@ var input = new Input({
 	el: $('.search'),
 	collection: combinations
 });
+

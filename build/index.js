@@ -21,6 +21,8 @@ var input = new Input({
 	el: $('.search'),
 	collection: combinations
 });
+
+
 },{"./collections/combinations":7,"./data":8,"./views/combinations":13,"./views/header":14,"./views/input":15,"backbone":2}],2:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
@@ -10124,7 +10126,6 @@ module.exports = View.extend({
 	},
 
 	toggle: function(e) {
-		console.log(e, $(e.currentTarget).parent());
 		$(e.currentTarget).parent().toggleClass('active');
 	},
 	render: function() {

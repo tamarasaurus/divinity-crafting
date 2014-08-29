@@ -16,7 +16,6 @@ module.exports = View.extend({
 	},
 
 	toggle: function(e) {
-		console.log(e, $(e.currentTarget).parent());
 		$(e.currentTarget).parent().toggleClass('active');
 	},
 	render: function() {
