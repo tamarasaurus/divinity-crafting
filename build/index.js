@@ -8454,10 +8454,10 @@ buf.push("</h4>");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-inputs\">");
+buf.push("<div class=\"item-inputs box waves-effect waves-block\">");
 
 
-buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
@@ -8469,7 +8469,7 @@ buf.push("<div class=\"fa fa-bolt\">");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
@@ -8606,10 +8606,10 @@ buf.push("</h4>");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-inputs\">");
+buf.push("<div class=\"item-inputs box waves-effect waves-block\">");
 
 
-buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
@@ -8621,7 +8621,7 @@ buf.push("<div class=\"fa fa-bolt\">");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
