@@ -7,7 +7,8 @@ module.exports = View.extend({
 	className: 'input',
 
 	events: {
-		'input input': 'change'
+		'input input': 'change',
+		'submit form': 'submit'
 	},
 
 	initialize: function() {
@@ -16,10 +17,11 @@ module.exports = View.extend({
 
 	render: function() {
 		this.$el.html(template());
+	},
 
-		$(this.$el.find('form')).submit(function(e) {
-			e.preventDefault();
-		});
+	submit: function(e) {
+		$(this.$el).find('input').blur();
+		e.preventDefault();
 	},
 
 	change: function(e) {
