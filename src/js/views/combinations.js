@@ -7,7 +7,7 @@ module.exports = View.extend({
 	tagName: 'ul',
 	className: 'item-combo-list',
 	events: {
-		'click .arrow': 'toggle'
+		'click .item-title, .arrow': 'toggle'
 	},
 
 	initialize: function() {
