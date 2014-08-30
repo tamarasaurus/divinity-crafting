@@ -27,7 +27,11 @@ module.exports = View.extend({
 			items: this.collection.models,
 			title: 'Combinations'
 		}));
-		window.scrollTo(0,0);
+		window.scrollTo(0, 0);
+
+		Waves.displayEffect({
+			duration: 300
+		});
 	},
 
 });

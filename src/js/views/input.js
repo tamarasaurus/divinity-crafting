@@ -17,6 +17,9 @@ module.exports = View.extend({
 
 	render: function() {
 		this.$el.html(template());
+		Waves.displayEffect({
+			duration: 300
+		});
 	},
 
 	submit: function(e) {

@@ -8457,7 +8457,7 @@ buf.push("</div>");
 buf.push("<div class=\"item-inputs\">");
 
 
-buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
@@ -8469,7 +8469,7 @@ buf.push("<div class=\"fa fa-bolt\">");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
@@ -8609,7 +8609,7 @@ buf.push("</div>");
 buf.push("<div class=\"item-inputs\">");
 
 
-buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
@@ -8621,7 +8621,7 @@ buf.push("<div class=\"fa fa-bolt\">");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
+buf.push("<div class=\"item-input box waves-effect waves-block\">" + (jade.escape(null == (jade_interp = item.get('input_2')) ? "" : jade_interp)));
 
 
 buf.push("</div>");
@@ -8755,7 +8755,7 @@ buf.push("<div class=\"fa fa-search\">");
 buf.push("</div>");
 
 
-buf.push("<input type=\"search\" placeholder=\"Ingredient\"/>");
+buf.push("<input type=\"search\" placeholder=\"Ingredient\" class=\"box raised-box waves-effect waves-float waves-block\"/>");
 
 
 buf.push("<input type=\"submit\"/>");
@@ -8765,7 +8765,7 @@ buf.push("</form>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "form\n  .fa.fa-search\n  input(type='search', placeholder='Ingredient')\n  input(type=\"submit\")");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "form\n  .fa.fa-search\n  input(type='search', placeholder='Ingredient').box.raised-box.waves-effect.waves-float.waves-block\n  input(type=\"submit\")");
 }
 }
 )(params); }
@@ -8800,7 +8800,11 @@ module.exports = View.extend({
 			items: this.collection.models,
 			title: 'Combinations'
 		}));
-		window.scrollTo(0,0);
+		window.scrollTo(0, 0);
+
+		Waves.displayEffect({
+			duration: 300
+		});
 	},
 
 });
@@ -8842,6 +8846,9 @@ module.exports = View.extend({
 
 	render: function() {
 		this.$el.html(template());
+		Waves.displayEffect({
+			duration: 300
+		});
 	},
 
 	submit: function(e) {
