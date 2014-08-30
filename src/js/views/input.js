@@ -16,6 +16,10 @@ module.exports = View.extend({
 
 	render: function() {
 		this.$el.html(template());
+
+		$(this.$el.find('form')).submit(function(e) {
+			e.preventDefault();
+		});
 	},
 
 	change: function(e) {
