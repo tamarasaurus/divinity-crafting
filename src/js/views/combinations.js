@@ -28,10 +28,6 @@ module.exports = View.extend({
 			title: 'Combinations'
 		}));
 		window.scrollTo(0, 0);
-
-		Waves.displayEffect({
-			duration: 300
-		});
 	},
 
 });
