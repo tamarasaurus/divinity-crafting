@@ -8454,7 +8454,7 @@ buf.push("</h4>");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-inputs\">");
+buf.push("<div class=\"item-inputs box waves-effect waves-block\">");
 
 
 buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
@@ -8606,7 +8606,7 @@ buf.push("</h4>");
 buf.push("</div>");
 
 
-buf.push("<div class=\"item-inputs\">");
+buf.push("<div class=\"item-inputs box waves-effect waves-block\">");
 
 
 buf.push("<div class=\"item-input\">" + (jade.escape(null == (jade_interp = item.get('input_1')) ? "" : jade_interp)));
@@ -8755,7 +8755,7 @@ buf.push("<div class=\"fa fa-search\">");
 buf.push("</div>");
 
 
-buf.push("<input type=\"search\" placeholder=\"Ingredient\"/>");
+buf.push("<input type=\"search\" placeholder=\"Ingredient\" class=\"box raised-box waves-effect waves-float waves-block\"/>");
 
 
 buf.push("<input type=\"submit\"/>");
@@ -8765,42 +8765,50 @@ buf.push("</form>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "form\n  .fa.fa-search\n  input(type='search', placeholder='Ingredient')\n  input(type=\"submit\")");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, "form\n  .fa.fa-search\n  input(type='search', placeholder='Ingredient').box.raised-box.waves-effect.waves-float.waves-block\n  input(type=\"submit\")");
 }
 }
 )(params); }
 
 },{"jade/lib/runtime.js":4}],12:[function(require,module,exports){
-var _ = require('underscore');
 var View = require('backbone').View;
 var template = require('../templates/combinations.jade');
-
 
 module.exports = View.extend({
 	tagName: 'ul',
 	className: 'item-combo-list',
 	events: {
-		'click .item-title, .arrow': 'toggle'
+		'click .item-title, .arrow': 'toggle',
+		'click .item-input': 'setFilter'
 	},
 
 	initialize: function() {
 		this.collection.on('reset', this.render, this);
 		this.render();
+	},
 
+	setFilter: function(e) {
+		$('input[type="search"]').val($(e.currentTarget).text()).trigger('input');
 	},
 
 	toggle: function(e) {
 		$(e.currentTarget).parent().toggleClass('active');
 	},
+
 	render: function() {
 		this.$el.html(template({
 			items: this.collection.models,
 			title: 'Combinations'
 		}));
+		window.scrollTo(0, 0);
+
+		Waves.displayEffect({
+			duration: 300
+		});
 	},
 
 });
-},{"../templates/combinations.jade":9,"backbone":2,"underscore":5}],13:[function(require,module,exports){
+},{"../templates/combinations.jade":9,"backbone":2}],13:[function(require,module,exports){
 var View = require('backbone').View;
 var template = require('../templates/header.jade');
 
@@ -8828,7 +8836,8 @@ module.exports = View.extend({
 	className: 'input',
 
 	events: {
-		'input input': 'change'
+		'input input': 'change',
+		'submit form': 'submit'
 	},
 
 	initialize: function() {
@@ -8837,10 +8846,14 @@ module.exports = View.extend({
 
 	render: function() {
 		this.$el.html(template());
-
-		$(this.$el.find('form')).submit(function(e) {
-			e.preventDefault();
+		Waves.displayEffect({
+			duration: 300
 		});
+	},
+
+	submit: function(e) {
+		$(this.$el).find('input').blur();
+		e.preventDefault();
 	},
 
 	change: function(e) {

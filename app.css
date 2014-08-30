@@ -185,6 +185,7 @@ ul {
 .item-input {
   width: 48%;
   display: block;
+  cursor: pointer;
   float: left;
   line-height: 40px;
   text-align: center;
@@ -217,6 +218,7 @@ ul {
   left: 20px;
   color: rgba(0,0,0,0.54);
   font-size: 18px;
+  z-index: 9;
 }
 input[type='search'] {
   padding-left: 55px;
@@ -227,9 +229,7 @@ input[type='search'] {
   font-size: 20px;
   -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
   box-shadow: 0 1px 1px 1px rgba(0,0,0,0.24);
-  border: 1px #f3f3f3 solid;
   color: rgba(0,0,0,0.72);
-  background-color: #fff;
 }
 input[type='submit'] {
   margin-left: -9999px;
