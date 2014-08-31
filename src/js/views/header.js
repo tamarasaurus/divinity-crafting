@@ -1,3 +1,5 @@
+'use strict';
+
 var View = require('backbone').View;
 var template = require('../templates/header.jade');
 
