@@ -38,6 +38,7 @@ var compile_scripts = function() {
 		.on('error', handleError)
 		.pipe(source('index.js'))
 		.on('end', function() {});
+    
 	stream.pipe(gulp.dest('./build/'))
     .pipe(connect.reload());
 };

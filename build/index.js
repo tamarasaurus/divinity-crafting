@@ -1,4 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+/* global jQuery, $ */
+
 var Backbone = require('backbone');
 Backbone.$ = jQuery;
 
@@ -10,16 +14,16 @@ var data = require('./data');
 var Combinations = require('./collections/combinations');
 var combinations = new Combinations(data);
 
-var list = new List({
-	el: $('.list'),
-	collection: combinations
+new List({
+  el: $('.list'),
+  collection: combinations
 });
-var header = new Header({
-	el: $('.header')
+new Header({
+  el: $('.header')
 });
-var input = new Input({
-	el: $('.search'),
-	collection: combinations
+new Input({
+  el: $('.search'),
+  collection: combinations
 });
 
 },{"./collections/combinations":6,"./data":7,"./views/combinations":12,"./views/header":13,"./views/input":14,"backbone":2}],2:[function(require,module,exports){
@@ -3257,24 +3261,30 @@ exports.rethrow = function rethrow(err, filename, lineno, str){
 }.call(this));
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
 var Collection = require('backbone').Collection;
 var Combination = require('../models/combination');
 
 var CombinationCollection = Collection.extend({
-	model: Combination,
-	initialize: function(data) {
-		this.originalModels = data;
-	},
+  model: Combination,
+  initialize: function(data) {
+    this.originalModels = data;
+  },
 
-	findByIngredient: function(query) {
-		this.reset(this.originalModels);
-		var filtered = this.filter(function(item) {
-			return item.get('input_1').toLowerCase().indexOf(query.toLowerCase()) > -1 || item.get('input_2').toLowerCase().indexOf(query.toLowerCase()) > -1 || item.get('output').toLowerCase().indexOf(query.toLowerCase()) > -1;
-		});
-		this.reset(filtered);
-	}
+  findByIngredient: function(query) {
+    this.reset(this.originalModels);
+    var filtered = this.filter(function(item) {
+      return item.get('input_1').toLowerCase().indexOf(query.toLowerCase()) > -
+        1 || item.get('input_2').toLowerCase().indexOf(query.toLowerCase()) > -
+        1 || item.get('output').toLowerCase().indexOf(query.toLowerCase()) > -
+        1;
+    });
+    this.reset(filtered);
+  }
 });
 module.exports = CombinationCollection;
+
 },{"../models/combination":8,"backbone":2}],7:[function(require,module,exports){
 module.exports=[{
 	"output_category": "Armor",
@@ -8301,24 +8311,27 @@ module.exports=[{
 	"notes": "Leveled to player"
 }]
 },{}],8:[function(require,module,exports){
+'use strict';
+
 var Model = require('backbone').Model;
 
 module.exports = Model.extend({
-	defaults: {
-		input_1: '',
-		input_2: '',
-		notes: null,
-		output: '',
-		output_category: '',
-		skill: null,
-		skill_level: null
-	}
+  defaults: {
+    input_1: '',
+    input_2: '',
+    notes: null,
+    output: '',
+    output_category: '',
+    skill: null,
+    skill_level: null
+  }
 });
+
 },{"backbone":2}],9:[function(require,module,exports){
 var jade = require('jade/lib/runtime.js');
 module.exports=function(params) { if (params) {params.require = require;} return (
 function template(locals) {
-var jade_debug = [{ lineno: 1, filename: "/Users/chahinet2r/Sites/divinity-crafting/src/js/templates/combinations.jade" }];
+var jade_debug = [{ lineno: 1, filename: "/Users/tamara/sites/divinity-crafting/src/js/templates/combinations.jade" }];
 try {
 var buf = [];
 var jade_mixins = {};
@@ -8654,7 +8667,7 @@ buf.push("</ul>");
 var jade = require('jade/lib/runtime.js');
 module.exports=function(params) { if (params) {params.require = require;} return (
 function template(locals) {
-var jade_debug = [{ lineno: 1, filename: "/Users/chahinet2r/Sites/divinity-crafting/src/js/templates/header.jade" }];
+var jade_debug = [{ lineno: 1, filename: "/Users/tamara/sites/divinity-crafting/src/js/templates/header.jade" }];
 try {
 var buf = [];
 var jade_mixins = {};
@@ -8738,7 +8751,7 @@ buf.push("</div>");
 var jade = require('jade/lib/runtime.js');
 module.exports=function(params) { if (params) {params.require = require;} return (
 function template(locals) {
-var jade_debug = [{ lineno: 1, filename: "/Users/chahinet2r/Sites/divinity-crafting/src/js/templates/input.jade" }];
+var jade_debug = [{ lineno: 1, filename: "/Users/tamara/sites/divinity-crafting/src/js/templates/input.jade" }];
 try {
 var buf = [];
 var jade_mixins = {};
@@ -8771,46 +8784,57 @@ buf.push("</form>");
 )(params); }
 
 },{"jade/lib/runtime.js":4}],12:[function(require,module,exports){
+'use strict';
+/* global $ */
+
 var View = require('backbone').View;
 var template = require('../templates/combinations.jade');
 
 module.exports = View.extend({
-	tagName: 'ul',
-	className: 'item-combo-list',
-	events: {
-		'click .item-title, .arrow': 'toggle',
-		'click .item-input': 'setFilter'
-	},
+  tagName: 'ul',
+  className: 'item-combo-list',
+  events: {
+    'click .item-title, .arrow': 'toggle',
+    'click .item-input': 'setFilter'
+  },
 
-	initialize: function() {
-		this.collection.on('reset', this.render, this);
-		this.render();
-	},
+  initialize: function() {
+    this.collection.on('reset', this.render, this);
+    this.render();
+  },
 
-	setFilter: function(e) {
-		$('input[type="search"]').val($(e.currentTarget).text()).trigger('input');
-	},
+  setFilter: function(e) {
+    $('input[type="search"]').val($(e.currentTarget).text()).trigger('input');
+  },
 
-	toggle: function(e) {
-		$(e.currentTarget).parent().toggleClass('active');
-	},
+  toggle: function(e) {
+    $(e.currentTarget).parent().toggleClass('active');
+  },
 
-	render: function() {
-		this.$el.html(template({
-			items: this.collection.models,
-			title: 'Combinations'
-		}));
-		window.scrollTo(0, 0);
-	},
+  render: function() {
+    this.$el.html(template({
+      items: this.collection.models,
+      title: 'Combinations'
+    }));
+    window.scrollTo(0, 0);
+  },
 
 });
+
 },{"../templates/combinations.jade":9,"backbone":2}],13:[function(require,module,exports){
+'use strict';
+
 var View = require('backbone').View;
 var template = require('../templates/header.jade');
 
 module.exports = View.extend({
   tagName: 'div',
   className: 'header',
+
+  events: {
+    'click .burger': 'showSidebar',
+    'click .sidebar': 'showSidebar'
+  },
 
   initialize: function() {
     this.render();
@@ -8820,47 +8844,65 @@ module.exports = View.extend({
     this.$el.html(template({
       title: 'Crafty'
     }));
-  }
+  },
+
+  showSidebar: function(e) {
+    console.log(e);
+    var sidebar = this.$el.find('.sidebar')
+    
+    if(!sidebar.hasClass('show')){
+      sidebar.addClass('show')
+      $('body,html').addClass('cover')
+    }else{
+      sidebar.removeClass('show')
+      $('body,html').removeClass('cover')
+    }
+   
+  },
 });
 },{"../templates/header.jade":10,"backbone":2}],14:[function(require,module,exports){
+'use strict';
+/* global $ */
+
 var View = require('backbone').View;
 var _ = require('underscore');
 var template = require('../templates/input.jade');
 
 module.exports = View.extend({
-	tagName: 'div',
-	className: 'input',
+  tagName: 'div',
+  className: 'input',
 
-	events: {
-		'input input': 'change',
-		'submit form': 'submit'
-	},
+  events: {
+    'input input': 'change',
+    'submit form': 'submit'
+  },
 
-	initialize: function() {
-		this.render();
-	},
+  initialize: function() {
+    this.render();
+  },
 
-	render: function() {
-		this.$el.html(template());
-	},
+  render: function() {
+    this.$el.html(template());
+  },
 
-	submit: function(e) {
-		$(this.$el).find('input').blur();
-		e.preventDefault();
-	},
+  submit: function(e) {
+    $(this.$el).find('input').blur();
+    e.preventDefault();
+  },
 
-	change: function(e) {
-		var val = $(e.currentTarget).val();
-		if (!_.isEmpty(val)) {
-			this.setFilter(this.collection, val);
-		} else {
-			this.collection.reset(this.collection.originalModels);
-		}
-	},
+  change: function(e) {
+    var val = $(e.currentTarget).val();
+    if(!_.isEmpty(val)) {
+      this.setFilter(this.collection, val);
+    } else {
+      this.collection.reset(this.collection.originalModels);
+    }
+  },
 
-	setFilter: _.debounce(function(collection, val) {
-		collection.findByIngredient(val);
-	}, 500)
+  setFilter: _.debounce(function(collection, val) {
+    collection.findByIngredient(val);
+  }, 500)
 
 });
+
 },{"../templates/input.jade":11,"backbone":2,"underscore":5}]},{},[1]);
