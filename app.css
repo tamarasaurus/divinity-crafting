@@ -26,7 +26,7 @@ h4 {
   color: #fff;
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 2;
   display: block;
 }
 .header h1 {
@@ -73,6 +73,8 @@ h4 {
   line-height: 24px;
   font-size: 20px;
   color: #0288d1;
+  display: block;
+  cursor: pointer;
 }
 .header .subtitle {
   font-size: 24px;
@@ -87,10 +89,30 @@ h4 {
   position: fixed;
   left: 0;
   top: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 9999;
+  background: rgba(0,0,0,0.5);
+}
+.sidebar ul {
+  color: #333;
+  background: #ccc;
   width: 70%;
   height: 100%;
-  background: #ccc;
-  display: none;
+  display: block;
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -70%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.sidebar.show {
+  visibility: visible;
+}
+.sidebar.show ul {
+  left: 0;
 }
 .sidebar.active {
   display: block;
@@ -252,10 +274,32 @@ input[type='submit'] {
   font-size: 14px;
   color: rgba(0,0,0,0.54);
 }
+.cover {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.overlay:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
 @media screen and (min-width: 640px) {
   .container {
     max-width: 70%;
     margin: 0 auto;
+  }
+  .show {
+    visibility: visible;
+  }
+  .show ul {
+    left: 0;
+    width: 30%;
   }
 }
 @media screen and (min-width: 1000px) {
