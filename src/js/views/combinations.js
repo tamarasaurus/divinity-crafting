@@ -18,7 +18,7 @@ module.exports = View.extend({
   },
 
   setFilter: function(e) {
-    $('input[type="search"]').val($(e.currentTarget).text()).trigger('input');
+    $('input[type="text"]').val($(e.currentTarget).text()).trigger('input');
   },
 
   toggle: function(e) {
