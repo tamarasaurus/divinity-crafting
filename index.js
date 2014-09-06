@@ -8699,19 +8699,222 @@ buf.push("</h1>");
 buf.push("<div class=\"sidebar\">");
 
 
+buf.push("<div data-info=\"data-info\">");
+
+
+
+buf.push("<h3>");
+
+
+buf.push("Data sources");
+
+
+buf.push("</h3>");
+
+
+buf.push("<p>");
+
+
+buf.push(" ");
+
+
+buf.push("<small>");
+
+
+buf.push("This dataset used in this app was sourced from a combination of forum guides and spreadsheets. The app and dataset are a work in progress - for any errors or improvements, submit an issue or pull request to the ");
+
+
+buf.push("<a href=\"https://github.com/tamarasaurus/divinity-crafting\">");
+
+
+buf.push("Github page");
+
+
+buf.push("</a>");
+
+
+buf.push(", or email me at&nbsp;");
+
+
+buf.push("<a href=\"mailto:tamarasaurus@gmail.com\">");
+
+
+buf.push("tamarasaurus@gmail.com");
+
+
+buf.push("</a>");
+
+
+buf.push("</small>");
+
+
+buf.push("</p>");
+
+
+buf.push("<h4>");
+
+
+buf.push("Credits");
+
+
+buf.push("</h4>");
+
+
 buf.push("<ul>");
+
+
+buf.push(" ");
 
 
 buf.push("<li>");
 
 
-buf.push("About");
+buf.push("<small>");
+
+
+buf.push("<a href=\"http://www.reddit.com/r/DivinityOriginalSin/comments/29rlwx/crafting_guide/\">");
+
+
+buf.push("Crafting Guide - Ashidoku");
+
+
+buf.push("</a>");
+
+
+buf.push("</small>");
+
+
+buf.push("</li>");
+
+
+buf.push("<li>");
+
+
+buf.push("<small>");
+
+
+buf.push("<a href=\"http://steamcommunity.com/app/230230/discussions/4/522730702195328107/\">");
+
+
+buf.push("All crafting / cooking recipes - eidolon232");
+
+
+buf.push("</a>");
+
+
+buf.push("</small>");
+
+
+buf.push("</li>");
+
+
+buf.push("<li>");
+
+
+buf.push("<small>");
+
+
+buf.push("<a href=\"http://www.larian.com/forums/ubbthreads.php?ubb=showflat&amp;Number=506826&amp;page=1\">");
+
+
+buf.push("Crafting Recipes - Angry Dave");
+
+
+buf.push("</a>");
+
+
+buf.push("</small>");
+
+
+buf.push("</li>");
+
+
+buf.push("<li>");
+
+
+buf.push("<small>");
+
+
+buf.push("<a href=\"https://docs.google.com/file/d/0B_fs99UGk4Q_czRyMDRxb0lBdWM/edit\">");
+
+
+buf.push("Main Item Combos - Patrick Sylvester-Jose");
+
+
+buf.push("</a>");
+
+
+buf.push("</small>");
+
+
+buf.push("</li>");
+
+
+buf.push("<li>");
+
+
+buf.push("<small>");
+
+
+buf.push("<a href=\"http://www.larian.com/forums/ubbthreads.php?ubb=showflat&amp;Number=524643\">");
+
+
+buf.push("Crafting Recipes &amp; Guide - ivra");
+
+
+buf.push("</a>");
+
+
+buf.push("</small>");
+
+
+buf.push("</li>");
+
+
+buf.push("<li>");
+
+
+buf.push("<small>");
+
+
+buf.push("<a href=\"https://docs.google.com/file/d/0B2BGWRFwPJkuS0Y2WUxHUXpEdFk/edit\">");
+
+
+buf.push("Raw Craft List - Venseer");
+
+
+buf.push("</a>");
+
+
+buf.push("</small>");
 
 
 buf.push("</li>");
 
 
 buf.push("</ul>");
+
+
+buf.push("<h5>");
+
+
+buf.push("By Tamara Chahine ");
+
+
+buf.push("<a href=\"https://github.com/tamarasaurus/\">");
+
+
+buf.push("(tamarasaurus)");
+
+
+buf.push("</a>");
+
+
+buf.push("</h5>");
+
+
+
+buf.push("</div>");
 
 
 buf.push("</div>");
@@ -8742,7 +8945,7 @@ buf.push("</div>");
 
 }.call(this,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n    .fa.fa-bars\n  h1= title\n  .sidebar\n    ul\n      li About\n  h2.subtitle Items\n  .find\n    .fa.fa-search");
+  jade.rethrow(err, jade_debug[0].filename, jade_debug[0].lineno, ".menu\n  .burger\n    .fa.fa-bars\n  h1= title\n  .sidebar\n    div(data-info)\n      include ./credits.jade\n  h2.subtitle Items\n  .find\n    .fa.fa-search");
 }
 }
 )(params); }
